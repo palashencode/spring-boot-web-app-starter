@@ -8,6 +8,8 @@ import com.java.spring.starterweb.model.Status;
 import com.java.spring.starterweb.model.UserDetail;
 import com.java.spring.starterweb.service.LoginService;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,9 +26,12 @@ public class HomeController {
     @Autowired
     LoginService loginService;
 
+    private static final Logger LOGGER = LogManager.getLogger(HomeController.class);
+
     @ResponseBody
     @RequestMapping(value="/status", method = RequestMethod.GET)
     public Status status(){
+        LOGGER.info("status called");
         return new Status("UP","web-application is up!");
     }
     
