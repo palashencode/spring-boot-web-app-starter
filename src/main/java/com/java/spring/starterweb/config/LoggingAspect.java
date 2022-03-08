@@ -17,8 +17,8 @@ import java.time.Instant;
 public class LoggingAspect {
     private static final Logger LOGGER = LogManager.getLogger(LoggingAspect.class);
 
-    @Around(
-            "execution(* com.java.spring.starterweb.controller2.HomeController2.*(..)) || execution(* com.java.spring.starterweb.controller.HomeController.*(..))")
+    @Around("execution(* com.java.spring.starterweb.controller2.HomeController2.*(..)) " +
+            "|| execution(* com.java.spring.starterweb.controller.HomeController.*(..))")
     public Object profileAllMethods(ProceedingJoinPoint proceedingJoinPoint) throws Throwable
     {
         MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();
