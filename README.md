@@ -1,3 +1,9 @@
+
+# TODO
+Has Imp pocs about login/logut and point cut advices and annotations. 
+Move that to the main project and delete this.
+
+
 # POC
 standalone deployable web application using spring-boot 
 
